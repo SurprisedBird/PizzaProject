@@ -11,7 +11,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
     path('accounts/', include('accounts.urls')),
     path('', include('core.urls')),
-    path('', include('dishes.urls')),
+ #   path('', include('dishes.urls')),
 ]
 
 if settings.DEBUG:
