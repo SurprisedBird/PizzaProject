@@ -1,8 +1,6 @@
-from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView
-from django.views.generic.edit import UpdateView
-from dishes.models import Dishes, Drink, Discount, Size, Ingredient
+from dishes.models import Dishes
 
 # Create your views here.
 class DishesListView(ListView):

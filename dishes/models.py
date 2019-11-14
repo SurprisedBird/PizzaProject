@@ -31,19 +31,15 @@ class BaseItem(models.Model):
 	class Meta:
 		abstract = True
 
-class Ingredient(models.Model):
-	name = models.CharField(max_length=50)
-	price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-
+class Ingredient(BaseItem):
+	
 	def __str__(self):
 		return self.name
 
-class Dishes(models.Model):
-	name = models.CharField(max_length=50)
+class Dishes(BaseItem):
 	size = models.ForeignKey(Size, on_delete=models.CASCADE)
 	discount = models.ForeignKey(Discount, on_delete=models.CASCADE)
 	ingridients = models.ManyToManyField(Ingredient)
-	price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
 
 	class Meta:
 		verbose_name_plural = 'Dishes'
@@ -51,9 +47,7 @@ class Dishes(models.Model):
 	def __str__(self):
 		return self.name
 
-class Drink(models.Model):
-	name = models.CharField(max_length=50)
-	prise = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+class Drink(BaseItem):
 
 	def __str__(self):
 		return self.name
