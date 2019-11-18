@@ -1,0 +1,10 @@
+<h1>Change Ingredient</h1>
+<form method="post">
+	{% csrf_token  %}
+	<ul>
+		{{form.as_ul}}
+	</ul>
+	<input type="submit" name="eddit_ingredient", value="Изменить">
+</form>
+
+<a href="{% url "ingredients_list" %}">back to list</a>
