@@ -40,6 +40,7 @@ class Dishes(BaseItem):
 	size = models.ForeignKey(Size, on_delete=models.CASCADE)
 	discount = models.ForeignKey(Discount, on_delete=models.CASCADE)
 	ingridients = models.ManyToManyField(Ingredient)
+	status = model.BooleanField(default=True)
 
 	class Meta:
 		verbose_name_plural = 'Dishes'
