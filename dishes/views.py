@@ -22,3 +22,15 @@ class DishesTamplateView(TemplateView):
 		context = super().get_context_data(**kwargs)
 		context['name'] = Dishes.objects.all()
 		return context
+
+class IngredientFormEddit(UpdateView):
+	form_class = IngredientForm
+	model = Ingredient
+	success_url = "/ingredients/list"
+	template_name = 'ingredients_form.html'
+
+class DishesFormEddit(UpdateView):
+	form_class = DishesForm
+	model = Dishes
+	success_url = "/dishes/list"
+	template_name = 'dishes_form.html'
