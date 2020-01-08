@@ -1,10 +1,11 @@
-<h1>Add Dishes</h1>
-<form method="post">
-	{% csrf_token  %}
-	<ul>
-		{{form.as_ul}}
-	</ul>
-	<input type="submit" name="eddit_dish", value="Изменить">
+{%extends "form_template.html"%}
+{%block main%}
+<h1>Dishes</h1>
+<form method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Edit">
+
 </form>
 
-<a href="{% url "dishes_list" %}">back to list</a>
+{% include 'footer.html'%}
+{% endblock %}
