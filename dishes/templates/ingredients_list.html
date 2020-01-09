@@ -1,6 +1,9 @@
-<h1>Ingredient</h1>
+{%extends "base.html"%}
+{%block main%}
+<h1>Ingredients</h1>
 <ul>
   {% for ingredient in ingredients %}
   	<li> {{ingredient.name}} {{ingredient.price}}</li>
   {%endfor%}
 </ul>
+{% endblock %}
