@@ -1,0 +1,10 @@
+<h1>Add Dishes</h1>
+<form method="post">
+	{% csrf_token  %}
+	<ul>
+		{{form.as_ul}}
+	</ul>
+	<input type="submit" name="eddit_dish", value="Изменить">
+</form>
+
+<a href="{% url "dishes_list" %}">back to list</a>
